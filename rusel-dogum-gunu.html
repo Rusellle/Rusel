@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rusel’in Doğum Günü 🎂</title>
+<style>
+:root{--bg:#fff0f5;--card:#fff;--tx:#3b1030;--ac:#e91e63;--ac2:#ffc107;--sh:rgba(233,30,99,.18);--ar:#ffe3ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0a18;--card:#2d1226;--tx:#ffe6f1;--sh:rgba(0,0,0,.4);--ar:#3d1a33}}
+:root[data-theme="dark"]{--bg:#1d0a18;--card:#2d1226;--tx:#ffe6f1;--sh:rgba(0,0,0,.4);--ar:#3d1a33}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;overflow-x:hidden}
+main{max-width:520px;margin:0 auto;padding:18px 14px 60px}
+h1{font-size:2rem;margin:.2em 0}h2{margin:.2em 0 .3em;font-size:1.15rem}
+.d{font-size:.85rem;opacity:.75;margin-bottom:8px}
+.card{background:var(--card);border-radius:22px;padding:16px;margin:14px 0;box-shadow:0 6px 18px var(--sh)}
+button{font:inherit;border:0;border-radius:14px;padding:12px 20px;background:var(--ac);color:#fff;cursor:pointer;font-weight:700}
+button:active{transform:scale(.96)}
+#cd{font-size:1.6rem;font-weight:800;color:var(--ac)}
+.stars{font-size:2rem;letter-spacing:6px}
+.done{opacity:.6}
+.area{position:relative;background:var(--ar);border-radius:16px;margin:8px 0;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;min-height:60px}
+.pg{font-weight:800;color:var(--ac)}
+.ok{padding:30px;font-size:1.4rem;font-weight:800}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:8px}
+.mc{height:62px;font-size:1.8rem;padding:0;background:var(--ac);border-radius:12px}
+.mc.up{background:var(--card)}.mc.hit{background:#a5d6a7}
+.f,.bl,.slot{position:absolute;user-select:none;-webkit-user-select:none}
+.f{font-size:2.6rem;left:0;top:0;padding:4px;will-change:transform}
+.bl{font-size:3rem;bottom:-70px;transition:transform 5s linear;cursor:pointer}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px}
+.slot{position:static;height:74px;font-size:2.2rem;background:var(--card);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.wheelbox{position:relative;width:240px;height:240px;margin:10px auto}
+#wheel{width:240px;height:240px;border-radius:50%;position:relative;transition:transform 4s cubic-bezier(.17,.67,.2,1);background:conic-gradient(#e91e63 0 60deg,#ffb300 60deg 120deg,#e91e63 120deg 180deg,#ffb300 180deg 240deg,#e91e63 240deg 300deg,#ffb300 300deg 360deg);border:4px solid var(--card);box-shadow:0 4px 14px var(--sh)}
+#wheel b{position:absolute;left:50%;top:50%;width:70px;margin-left:-35px;margin-top:-9px;color:#fff;font-size:.9rem;text-shadow:0 1px 3px #0006}
+.ptr{position:absolute;left:50%;top:-10px;margin-left:-12px;font-size:1.6rem;z-index:2}
+.fr{display:flex;gap:6px}
+.fc{perspective:600px;flex:1;min-width:0;height:96px;cursor:pointer}
+.fi{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.fc.on .fi{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;font-weight:800}
+.fa{background:var(--ac);color:#fff;font-size:2.2rem}
+.fb{background:var(--ac2);color:#3b1030;transform:rotateY(180deg);font-size:.9rem;text-align:center;padding:2px}
+#sen{margin-top:14px;font-size:1.25rem;font-weight:800;line-height:1.5}
+#sen span{opacity:.18;transition:opacity .4s}#sen span.on{opacity:1;color:var(--ac)}
+#gift{font-size:5rem;cursor:pointer;display:inline-block}
+#gift.open{animation:pop .6s}
+@keyframes pop{50%{transform:scale(1.4) rotate(12deg)}}
+#gm{font-size:1.3rem;font-weight:800;min-height:1.5em;margin-top:8px}
+.row{display:flex;justify-content:center;gap:14px;align-items:center;min-height:90px;flex-wrap:wrap}
+.lock{filter:grayscale(1);opacity:.5;pointer-events:none}
+.conf{position:fixed;top:-20px;font-size:1.6rem;pointer-events:none;animation:fall 3s linear forwards;z-index:50}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.fly{display:inline-block;transition:transform 1s}
+#ov{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:100;padding:24px}
+#ov div{position:relative;max-width:360px;padding:28px 26px;background:linear-gradient(160deg,#e8202f,#98101d);color:#fff;border:4px solid #fff;border-radius:18px;box-shadow:0 0 0 6px #c1121f,0 0 50px #ff2a3d99,0 18px 40px #0009;font-size:1.7rem;font-weight:800;letter-spacing:.5px;line-height:1.35;text-shadow:0 2px 6px #0006;animation:zoom .8s cubic-bezier(.2,1.4,.4,1)}
+#ov div::after{content:"";position:absolute;inset:8px;border:2px dashed #ffffff88;border-radius:12px;pointer-events:none}
+#ov small{display:block;font-size:.7rem;letter-spacing:5px;opacity:.9;margin-bottom:10px;font-weight:700}
+@keyframes zoom{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+main{position:relative;z-index:1}
+#bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+#bg span{position:absolute;bottom:-50px;opacity:.28;animation:up linear infinite}
+@keyframes up{to{transform:translateY(-120vh) rotate(40deg)}}
+.cert{border:4px double #b8860b;background:linear-gradient(135deg,#fff8dc,#ffeaa7);color:#4a3200;border-radius:14px;padding:18px 14px;font-family:Georgia,serif;line-height:1.5}
+.ct{font-size:1.4rem;font-weight:900;letter-spacing:3px}.cn{font-size:2.2rem;font-weight:900;color:#b0102a;margin:4px 0}.cs{margin-top:10px;font-style:italic}
+#fwc{width:100%;height:260px;background:#14051a;border-radius:16px;display:block;margin-bottom:10px}
+</style></head><body><div id="bg"></div><main>
+<h1>🎂 Rusel 🎂</h1><div id="tw" style="min-height:1.6em;font-weight:700;color:var(--ac)"></div>
+<div class="card"><div>Doğum gününe kalan süre</div><div id="cd">--:--:--</div></div>
+
+<div class="card"><h2>🎁 Bu hediyeyi kabul ediyor musun?</h2>
+<div class="row"><button id="yes">Evet 💖</button><button id="no">Hayır</button></div><div id="fin" style="font-size:1.4rem;font-weight:800"></div></div>
+
+<div id="rest" style="display:none">
+<div class="card"><h2>🎮 4 oyunu bitir, 4 yıldızı kap!</h2><div class="stars" id="stbar">☆☆☆☆</div></div>
+<div class="card" id="g1"></div><div class="card" id="g2"></div><div class="card" id="g3"></div><div class="card" id="g4"></div>
+
+<div class="card lock" id="collect"><h2>⭐ Yıldızları toplayalım</h2>
+<div class="stars" id="fly"><span class="fly">⭐</span><span class="fly">⭐</span><span class="fly">⭐</span><span class="fly">⭐</span></div>
+<button id="coll" style="margin-top:10px">Topla!</button></div>
+
+<div class="card lock" id="giftc"><h2>🎁 Hediye</h2><span id="gift">🎁</span><div id="gm"></div></div>
+
+<div class="card"><h2>🎡 Eğlence çarkı</h2>
+<div class="wheelbox"><div class="ptr">🔻</div><div id="wheel"></div></div>
+<button id="spin">Çevir</button><div id="wr" style="font-size:1.3rem;font-weight:800;margin-top:10px;min-height:1.5em"></div></div>
+
+<div class="card"><h2>İsmine dokun, kartları aç</h2><div class="fr" id="lets"></div><div id="sen"></div></div>
+
+<div class="card"><h2>🎂 Mumları üfle</h2><div id="cakeW" style="cursor:pointer;user-select:none"><div id="cn" style="font-size:2rem;height:2.4rem">🕯️🕯️🕯️</div><div style="font-size:4.5rem">🎂</div></div></div>
+
+<div class="card"><h2>🏅 Rusel Onur Belgesi</h2><div class="cert"><div class="ct">ONUR BELGESİ</div><div>İşbu belge</div><div class="cn">RUSEL</div>
+<div>adlı kişiye, onur belgesi alıp herkese “ağla” diyebilme başarısı nedeniyle verilmiştir.</div><div class="cs">🏆 Doğum Günü Komitesi</div></div></div>
+
+<div class="card"><h2>🎆 Final sürprizi</h2><canvas id="fwc"></canvas><button id="fwb">Havai fişek patlat</button></div>
+</div>
+
+<div id="ov"><div><small>✦ RUSEL ✦</small>Saçlarını kırmızıya boyamışsın,<br>yakışmış 🔥</div></div>
+</main>
+<script>
+var $=function(i){return document.getElementById(i)};
+var TARGET=new Date("2026-10-24T23:50:31+03:00").getTime();
+function tick(){var d=TARGET-Date.now();if(d<=0){$("cd").textContent="🎉 Bugün! 🎉";return}
+var h=Math.floor(d/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+$("cd").textContent=[h,m,s].map(function(x){return String(x).padStart(2,"0")}).join(":")}
+tick();setInterval(tick,1000);
+function conf(n){var e=["🎉","🎊","💖","⭐","🎈","🌹"];for(var i=0;i<(n||25);i++){(function(){var s=document.createElement("div");s.className="conf";s.textContent=e[Math.floor(Math.random()*e.length)];s.style.left=Math.random()*100+"vw";s.style.animationDelay=Math.random()*1.2+"s";document.body.appendChild(s);setTimeout(function(){s.remove()},4500)})()}}
+
+var stars=0;
+function win(id){var c=$(id);if(c.classList.contains("done"))return;c.classList.add("done");stars++;
+$("stbar").textContent="⭐".repeat(stars)+"☆".repeat(4-stars);conf(12);
+if(stars===4){$("collect").classList.remove("lock");setTimeout(function(){$("collect").scrollIntoView({behavior:"smooth"})},800)}}
+
+function mk(id,title,desc,goal,h,run){
+var c=$(id),sc=0,on=false,stop=function(){};
+c.innerHTML="<h2>"+title+"</h2><div class='pg'>0 / "+goal+"</div><div class='area'></div><button>Başla</button>";
+var area=c.querySelector(".area"),pg=c.querySelector(".pg"),btn=c.querySelector("button");
+if(h)area.style.height=h+"px";
+function add(n){if(!on)return;sc=Math.max(0,sc+n);pg.textContent=sc+" / "+goal;
+if(sc>=goal){on=false;stop();area.style.height="";area.innerHTML="<div class='ok'>Tamamladın! ⭐</div>";btn.style.display="none";win(id)}}
+btn.onclick=function(){stop();sc=0;on=true;pg.textContent="0 / "+goal;area.innerHTML="";btn.textContent="Baştan başla";stop=run(area,add)||function(){}}}
+
+/* 1 kart eşleştirme */
+mk("g1","🃏 Kart eşleştirme","Aynı kartları bul, 6 çift var",6,0,function(area,add){
+var e=["🎂","🎁","🎈","🍓","🌹","🎉"],a=e.concat(e).sort(function(){return Math.random()-.5}),op=[],lk=false;
+area.innerHTML="<div class='mg'>"+a.map(function(x,i){return "<button class='mc' data-i='"+i+"'>❔</button>"}).join("")+"</div>";
+area.onclick=function(ev){var b=ev.target;if(!b.classList.contains("mc")||lk||b.classList.contains("up")||b.classList.contains("hit"))return;
+b.classList.add("up");b.textContent=a[b.dataset.i];op.push(b);
+if(op.length===2){var x=op[0],y=op[1];op=[];
+if(a[x.dataset.i]===a[y.dataset.i]){x.classList.add("hit");y.classList.add("hit");add(1)}
+else{lk=true;setTimeout(function(){[x,y].forEach(function(z){z.classList.remove("up");z.textContent="❔"});lk=false},700)}}};
+return function(){area.onclick=null}});
+
+/* 2 meyve doğrama */
+mk("g2","🍉 Doğum günü meyve doğrama","Parmağını kaydır, meyveleri doğra. 💣’lardan kaç! (12 tane)",12,320,function(area,add){
+var F=["🍓","🍉","🍊","🍌","🍇","🍒","🎂","🧁"],items=[],raf,iv,H=area.clientHeight,W=area.clientWidth;
+var cv=document.createElement("canvas"),pts=[],cx=cv.getContext("2d");cv.width=W;cv.height=H;cv.style.cssText="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:5";area.appendChild(cv);
+function spawn(){var b=Math.random()<.16,el=document.createElement("div");el.className="f";el.dataset.b=b?1:0;
+el.textContent=b?"💣":F[Math.floor(Math.random()*F.length)];area.appendChild(el);
+items.push({el:el,x:30+Math.random()*(W-90),y:H,vx:(Math.random()-.5)*2.4,vy:-(10.5+Math.random()*2.5)})}
+function cut(el){if(el.dataset.d)return;el.dataset.d=1;var b=el.dataset.b==="1";add(b?-3:1);el.textContent=b?"💥":"✂️";el.style.opacity=.7;setTimeout(function(){el.remove()},350)}
+function draw(){var n=Date.now();pts=pts.filter(function(p){return n-p.t<260});cx.clearRect(0,0,W,H);cx.lineCap="round";cx.shadowColor="#ff4081";cx.shadowBlur=12;for(var i=1;i<pts.length;i++){var a=pts[i-1],b=pts[i],k=1-(n-b.t)/260;if(b.s)continue;cx.strokeStyle="rgba(255,255,255,"+k+")";cx.lineWidth=2+6*k;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+function loop(){items=items.filter(function(o){if(!o.el.isConnected)return false;o.vy+=.22;o.x+=o.vx;o.y+=o.vy;
+o.el.style.transform="translate("+o.x+"px,"+o.y+"px)";if(o.y>H+10&&o.vy>0){o.el.remove();return false}return true});draw();raf=requestAnimationFrame(loop)}
+function hit(ev){if(ev.type==="pointermove"&&!ev.buttons)return;var r=area.getBoundingClientRect();pts.push({x:ev.clientX-r.left,y:ev.clientY-r.top,t:Date.now(),s:ev.type==="pointerdown"});var t=document.elementFromPoint(ev.clientX,ev.clientY);if(t&&t.classList.contains("f"))cut(t)}
+area.onpointermove=hit;area.onpointerdown=hit;iv=setInterval(spawn,650);spawn();loop();
+return function(){clearInterval(iv);cancelAnimationFrame(raf);area.onpointermove=null;area.onpointerdown=null}});
+
+/* 3 balon patlatma */
+mk("g3","🎈 Balon patlat","Yükselen balonlara dokun (12 tane)",12,300,function(area,add){
+var iv,W=area.clientWidth,H=area.clientHeight,cols=[0,60,140,200,280];
+function spawn(){var el=document.createElement("div");el.className="bl";el.textContent="🎈";
+el.style.left=Math.random()*(W-56)+"px";el.style.filter="hue-rotate("+cols[Math.floor(Math.random()*5)]+"deg)";
+area.appendChild(el);setTimeout(function(){el.style.transform="translateY(-"+(H+140)+"px)"},30);
+el.onpointerdown=function(){if(el.dataset.d)return;el.dataset.d=1;el.textContent="💥";el.style.filter="none";add(1);setTimeout(function(){el.remove()},250)};
+setTimeout(function(){el.remove()},5300)}
+iv=setInterval(spawn,520);spawn();return function(){clearInterval(iv)}});
+
+/* 4 mum söndür */
+mk("g4","🕯️ Mumları söndür","Çıkan mumlara hızlıca dokun (8 tane)",8,0,function(area,add){
+area.innerHTML="<div class='sg'>"+"<div class='slot'>🎂</div>".repeat(6)+"</div>";
+var sl=area.querySelectorAll(".slot"),iv;
+sl.forEach(function(s){s.onpointerdown=function(){if(s.dataset.c==="1"){s.dataset.c="0";s.textContent="💨";add(1);setTimeout(function(){s.textContent="🎂"},300)}}});
+function show(){var s=sl[Math.floor(Math.random()*6)];if(s.dataset.c==="1")return;s.dataset.c="1";s.textContent="🕯️";
+setTimeout(function(){if(s.dataset.c==="1"){s.dataset.c="0";s.textContent="🎂"}},1100)}
+iv=setInterval(show,650);return function(){clearInterval(iv)}});
+
+/* yıldızları topla */
+$("coll").onclick=function(){this.disabled=true;
+document.querySelectorAll(".fly").forEach(function(s,i){s.style.transform="translateX("+((1.5-i)*28)+"px) scale(1.6)"});
+setTimeout(function(){conf(30);var ov=$("ov");ov.style.display="flex";
+setTimeout(function(){ov.style.display="none";$("giftc").classList.remove("lock");$("giftc").scrollIntoView({behavior:"smooth"})},5000)},1100)};
+
+$("gift").onclick=function(){this.textContent="🎊";this.classList.add("open");$("gm").textContent="Bir seferlik haklı olma hakkı 🎟️";conf(30)};
+
+/* çark */
+var w=$("wheel"),rot=0;
+for(var i=0;i<6;i++){var b=document.createElement("b");b.textContent=i%2?"Rusel":"Burak";b.style.transform="rotate("+(i*60+30)+"deg) translateY(-88px)";w.appendChild(b)}
+$("spin").onclick=function(){var btn=this;btn.disabled=true;$("wr").textContent="";rot+=1800+Math.floor(Math.random()*360);w.style.transform="rotate("+rot+"deg)";
+setTimeout(function(){var idx=Math.floor(((360-rot%360)%360)/60);
+$("wr").textContent=idx%2===0?"Burak haklı ağlaaa 😭":"Tüh sen haklısın 😤";btn.disabled=false},4100)};
+
+/* RUSEL kartları */
+var words=["Ben","onur","belgesi","aldım","ağla"],opened=0;
+$("sen").innerHTML=words.map(function(x){return "<span>"+x+"</span>"}).join(" ")+" <span>🏆</span>";
+"RUSEL".split("").forEach(function(c,i){var d=document.createElement("div");d.className="fc";
+d.innerHTML="<div class='fi'><div class='fa'>"+c+"</div><div class='fb'>"+words[i]+"</div></div>";
+d.onclick=function(){if(d.classList.contains("on"))return;d.classList.add("on");opened++;
+$("sen").children[i].classList.add("on");if(opened===5){$("sen").lastChild.classList.add("on");conf(40)}};$("lets").appendChild(d)});
+
+/* süsler */
+var tt="Sana küçük bir sürprizim var… 💌",ti=0;(function t(){$("tw").textContent=tt.slice(0,ti++);if(ti<=tt.length)setTimeout(t,70)})();
+["🎈","💖","⭐","🎂","🌹","🎁"].forEach(function(e){for(var j=0;j<3;j++){var s=document.createElement("span");s.textContent=e;s.style.left=Math.random()*95+"vw";s.style.fontSize=(18+Math.random()*22)+"px";s.style.animationDuration=(10+Math.random()*12)+"s";s.style.animationDelay=(-Math.random()*20)+"s";$("bg").appendChild(s)}});
+$("cakeW").onclick=function(){var n=$("cn");if(n.dataset.o)return;n.dataset.o=1;n.textContent="💨💨💨";conf(20);setTimeout(function(){n.textContent="🕯️🕯️🕯️";n.dataset.o=""},1500)};
+var fw=$("fwc"),fx=fw.getContext("2d"),ps=[],fon=false,fend=0;
+function fwLoop(){fx.fillStyle="rgba(20,5,26,.25)";fx.fillRect(0,0,fw.width,fw.height);
+ps=ps.filter(function(p){p.vy+=.04;p.x+=p.vx;p.y+=p.vy;p.l-=.012;if(p.l<=0)return false;fx.fillStyle="hsla("+p.h+",100%,60%,"+p.l+")";fx.beginPath();fx.arc(p.x,p.y,2.2,0,6.3);fx.fill();return true});
+if(ps.length||Date.now()<fend)requestAnimationFrame(fwLoop);else{fon=false;fx.clearRect(0,0,fw.width,fw.height)}}
+function boom(){var x=40+Math.random()*(fw.width-80),y=40+Math.random()*(fw.height-120),h=Math.random()*360;for(var i=0;i<55;i++){var a=Math.random()*6.28,s=Math.random()*3+.8;ps.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,h:h+Math.random()*40,l:1})}}
+$("fwb").onclick=function(){fw.width=fw.clientWidth;fw.height=260;fend=Date.now()+2500;for(var i=0;i<6;i++)setTimeout(boom,i*420);if(!fon){fon=true;fwLoop()}};
+
+/* evet / hayır */
+var sc=1,yes=$("yes"),no=$("no");
+function run(e){e.preventDefault();sc+=.35;yes.style.transform="scale("+sc+")";no.style.position="fixed";
+no.style.left=Math.random()*(innerWidth-100)+"px";no.style.top=Math.random()*(innerHeight-60)+"px";no.style.zIndex=20}
+no.addEventListener("mouseover",run);no.addEventListener("touchstart",run,{passive:false});no.addEventListener("click",run);
+yes.onclick=function(){$("fin").textContent="Yaşasın! 🎉 Doğum günün kutlu olsun Rusel! 💖";no.style.display="none";yes.style.display="none";conf(60);$("rest").style.display="block"};
+</script></body></html>
